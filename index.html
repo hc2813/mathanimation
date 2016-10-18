@@ -1,52 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>math.js | plot</title>
-  <script src="http://cdnjs.cloudflare.com/ajax/libs/mathjs/3.5.3/math.min.js"></script>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+  <script src="http://maurizzzio.github.io/function-plot/js/function-plot.js"></script>
+  <meta charset="utf-8">
 
-  <!-- load http://maurizzzio.github.io/function-plot/ -->
-  <script src="http://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
-  <script src="https://wzrd.in/standalone/function-plot@1.14.0"></script>
-
-  <style>
-    input[type=text] {
-      width: 300px;
-    }
-    input {
-      padding: 6px;
-    }
-    body, html, input {
-      font-family: sans-serif;
-      font-size: 11pt;
-
-    }
-    form {
-      margin: 20px 0;
-    }
-  </style>
 </head>
 <body>
-<p>
-    demo test
-    </p>
-<form id="form3">
-  <label for="eq3">function1:</label>
+  <form id="form3">
+  <label for="eq3">Enter function #3:</label>
   <input type="text" id="eq3" value="sin(x)" />
-  <label for="eq4">function2:</label>
-  <input type="text" id="eq4" value="cos(x)" />
-</form>
-<form id="form4">
-<input type="submit" value="Draw" />
-</form>
-
-  <div id="demo"></div>
     
-
-
-<script>
+  <label for="eq4">Enter function #4:</label>
+  <input type="text" id="eq4" value="cos(x)" />
+  <input type="submit" value="Draw3" />
+</form>
+  <div id="demo"></div>
   
-
-function draw()
+  
+<script id="jsbin-javascript">
+function draw3()
 {functionPlot({
   target: '#demo',
   data: [
@@ -55,17 +28,30 @@ function draw()
   ]
 })
 }
-
-
-
-document.getElementById('form4').onsubmit = function (event) {
+  document.getElementById('form3').onsubmit = function (event) {
     event.preventDefault();
-    draw();
+    draw3();
   };
     
-  draw();
-
+  draw3();
 </script>
 
-</body>
+
+
+<script id="jsbin-source-javascript" type="text/javascript">function draw3()
+{functionPlot({
+  target: '#demo',
+  data: [
+    { fn: document.getElementById('eq3').value, color: 'blue' },
+    { fn: document.getElementById('eq4').value, color: 'red' }
+  ]
+})
+}
+  document.getElementById('form3').onsubmit = function (event) {
+    event.preventDefault();
+    draw3();
+  };
+    
+  draw3();
+</script></body>
 </html>
